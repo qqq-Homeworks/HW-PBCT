@@ -46,6 +46,11 @@ void SeedData(std::map<std::string, Bus> &park) {
 }
 
 void OutBus(std::map<std::string, Bus> &park, std::map<std::string, Bus> &route) {
+    if (park.empty())
+    {
+        std::cout << "Сейчас в парке нет автобусов\n";
+        return;
+    }
     std::cout << "Список автобусов в парке:\n";
     print(park);
     std::cout << "Введите номер автобуса, который желаете вывести на линию:\n";
@@ -65,6 +70,11 @@ void OutBus(std::map<std::string, Bus> &park, std::map<std::string, Bus> &route)
 }
 
 void EnterBus(std::map<std::string, Bus> &park, std::map<std::string, Bus> &route) {
+    if (route.empty())
+    {
+        std::cout << "Сейчас на маршруте нет автобусов\n";
+        return;
+    }
     std::cout << "Список автобусов на маршруте:\n";
     print(route);
     std::cout << "Введите номер автобуса, который желаете снять с линии:\n";
@@ -119,6 +129,7 @@ void updateDB(std::map<std::string, Bus> &park, std::map<std::string, Bus> &rout
     std::ofstream outFileRoute("OnRouteDatabase.db");
     outFilePark.clear();
     outFileRoute.clear();
+
 
     outFilePark << park.size() << '\n';
     for (auto busPair: park) {
