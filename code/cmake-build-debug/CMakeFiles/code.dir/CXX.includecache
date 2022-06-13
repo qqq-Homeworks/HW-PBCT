@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/qqq/Documents/University/1course/2term/PBCT/HW/code/Bus.hpp
+iostream
+-
+string
+-
+vector
+-
+fstream
+-
+
+/Users/qqq/Documents/University/1course/2term/PBCT/HW/code/DataBase.cpp
+DataBase.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/HW/code/DataBase.hpp
+
+/Users/qqq/Documents/University/1course/2term/PBCT/HW/code/DataBase.hpp
+fstream
+-
+map
+-
+algorithm
+-
+Bus.hpp
+/Users/qqq/Documents/University/1course/2term/PBCT/HW/code/Bus.hpp
+
