@@ -45,9 +45,35 @@ void SeedData(std::map<std::string, Bus> &park) {
     std::cout << "Данные обновлены\n";
 }
 
+void AddBus(std::map<std::string, Bus> &park) {
+    std::cout << "Введите данные об автобусе через пробел (Номер, Инициалы водителя, Номер маршрута):\n";
+    Bus tempBus;
+    std::cin >> tempBus;
+    park.insert(std::make_pair(tempBus.GetNumber(), tempBus));
+    std::cout << "Автобус добавлен в парк\n";
+}
+
+void DeleteBus(std::map<std::string, Bus> &park) {
+    print(park);
+    std::cout << "Введите номер автобуса, который желаете удалить из парка:\n";
+    std::string tempNumber;
+
+    bool entering = true;
+    while (entering) {
+        std::cin >> tempNumber;
+        if (park.find(tempNumber) != park.end()) {
+
+            park.erase(tempNumber);
+            std::cout << "Автобус удалён\n";
+            entering = false;
+        } else {
+            std::cout << "Автобуса с таким номером не найдено, повторите ввод:\n";
+        }
+    }
+}
+
 void OutBus(std::map<std::string, Bus> &park, std::map<std::string, Bus> &route) {
-    if (park.empty())
-    {
+    if (park.empty()) {
         std::cout << "Сейчас в парке нет автобусов\n";
         return;
     }
@@ -70,8 +96,7 @@ void OutBus(std::map<std::string, Bus> &park, std::map<std::string, Bus> &route)
 }
 
 void EnterBus(std::map<std::string, Bus> &park, std::map<std::string, Bus> &route) {
-    if (route.empty())
-    {
+    if (route.empty()) {
         std::cout << "Сейчас на маршруте нет автобусов\n";
         return;
     }

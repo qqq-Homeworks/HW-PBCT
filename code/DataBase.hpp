@@ -13,6 +13,10 @@ void SeedData(std::map<std::string, Bus> &);
 
 void OutBus(std::map<std::string, Bus> &, std::map<std::string, Bus> &);
 
+void AddBus(std::map<std::string, Bus> &);
+
+void DeleteBus(std::map<std::string, Bus> &);
+
 void EnterBus(std::map<std::string, Bus> &, std::map<std::string, Bus> &);
 
 void PrintBuses(std::map<std::string, Bus> &, std::map<std::string, Bus> &, bool);
@@ -20,7 +24,6 @@ void PrintBuses(std::map<std::string, Bus> &, std::map<std::string, Bus> &, bool
 void updateDB(std::map<std::string, Bus> &, std::map<std::string, Bus> &);
 
 void fillData(std::map<std::string, Bus> &, std::map<std::string, Bus> &);
-
 
 
 #endif //CODE_DATABASE_HPP

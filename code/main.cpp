@@ -4,6 +4,8 @@
 
 void PrintMenu() {
     std::vector<std::string> menuHeaders = {"Перезаполнить список маршрутов",
+                                            "Добавить автобус в парк",
+                                            "Удалить автобус из парка",
                                             "Выезд автобуса на маршрут",
                                             "Въезд автобуса в парк",
                                             "Список автобусов по номеру",
@@ -18,6 +20,8 @@ void PrintMenu() {
 
 enum MenuPouints {
     FEEL_BUSES = 1,
+    ADD_BUS,
+    DELETE_BUS,
     OUT_BUS,
     ENTER_BUS,
     BUSES_BY_NUMBER,
@@ -41,6 +45,12 @@ int main() {
             case FEEL_BUSES:
                 SeedData(inPark);
                 onRoute.clear();
+                break;
+            case ADD_BUS:
+                AddBus(inPark);
+                break;
+            case DELETE_BUS:
+                DeleteBus(inPark);
                 break;
             case OUT_BUS:
                 OutBus(inPark, onRoute);

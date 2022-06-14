@@ -37,6 +37,8 @@ public:
 
     friend std::ifstream &operator>>(std::ifstream &, Bus &);
 
+    friend std::istream &operator>>(std::istream &, Bus &);
+
 };
 
 
